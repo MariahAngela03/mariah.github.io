@@ -1,0 +1,860 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Medilab Bootstrap Template - Index</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/group-logo.png" rel="icon">
+  <link href="assets/img/group-logo.png" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <style>
+    #sidebar {
+      position: fixed;
+      top: 47%;
+      left: 50px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .sidebar-btn {
+      background-color: #2c4964;
+      border: 2px solid #fff;
+      width: 50px;
+      height: 50px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+      color: #fff;
+      font-size: 1.5rem;
+    }
+
+    .sidebar-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .sidebar-btn:focus, 
+    .sidebar-btn:active {
+      outline: none;
+    }
+
+    .sidebar-btn i {
+      pointer-events: none;
+    }
+
+    .custom-user-icon {
+      background-color: #87CEFA;
+      border: 2px solid #fff;
+      width: 50px;
+      height: 50px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+      position: relative;
+      color: #fff;
+    }
+
+    .custom-user-icon::after {
+      display: none;
+    }
+
+    .custom-user-icon:hover {
+      transform: scale(1.1);
+      background-color: #2c4964;
+    }
+
+    .custom-user-icon:focus, 
+    .custom-user-icon:active {
+      background-color: #2c4964;
+      color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      outline: none;
+    }
+
+    .custom-icon {
+      font-size: 1.5rem;
+    }
+
+    .table {
+      border-collapse: separate;
+      border-spacing: 0;
+      width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
+
+    .table th {
+      background-color: #f8f9fa;
+      border-bottom: 2px solid #ddd;
+      padding: 12px;
+      text-align: center;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .table td {
+      border-bottom: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .table tbody tr:hover {
+      background-color: #f9f9f9;
+    }
+
+    #continueBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      background-color: #2c4964;
+    }
+
+    #backBtn {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 1000;
+    }
+
+    #popupNotification {
+        display: none;
+        position: fixed;
+        top: 430px;
+        right: 20px;
+        width: 355px;
+        background: linear-gradient(135deg, #2c4964, #00aaff);
+        color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        font-family: 'Arial', sans-serif;
+        z-index: 1000;
+        animation: fadein 0.7s ease-in-out, ease-in-out 4.3s;
+    }
+
+    #popupNotification span {
+        font-size: 17px;
+        color: #fff;
+        margin-right: 20px;
+        text-align: justify;
+    }
+
+    @keyframes fadein {
+        from {
+            transform: translateY(1px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeout {
+        from {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateY(1px);
+            opacity: 0;
+        }
+    }
+
+#popupNotification button {
+    /* General button styles */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px; /* Smaller font size */
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 6px 18px; /* Smaller padding */
+}
+
+#popupNotification .yes-button {
+    background-color: #4CAF50; /* Green */
+}
+
+#popupNotification .no-button {
+    background-color: #f44336; /* Red */
+}
+
+
+</style>
+</head>
+<body>
+
+<div id="popupNotification">
+    <span id="popupMessage">This is a notification message!</span>
+    <br>
+    <br>
+    <span>Have you taken your medicine?</span>
+    <button class="yes-button" onclick="recordMedicineTaken('yes')">Yes</button>
+    <button class="no-button" onclick="recordMedicineTaken('no')">No</button>
+</div>
+
+    <audio id="notificationSound" src="IphoneAlarmSoundEffect.mp3" preload="auto"></audio>
+</div>
+
+
+
+    <!--  Delete Button -->
+    <td><button class="btn btn-danger delete-btn"><i class="bi bi-x-circle"></i></button></td>
+
+<!-- Continue Button -->
+<button id="continueBtn" class="btn btn-primary">Continue</button>
+
+<!-- Back Button -->
+<button id="backBtn" class="btn btn-secondary">Back</button>
+
+<!-- Sidebar -->
+<div id="sidebar">
+  <button class="sidebar-btn" id="addItemBtn" title="Add Item"><i class="fas fa-plus"></i></button>
+  <button class="sidebar-btn" id="deleteItemBtn" title="Delete Item"><i class="fas fa-trash-alt"></i></button>
+  <button class="sidebar-btn" id="saveItemBtn" title="Save Item" ><i class="fas fa-save"></i></button>
+
+</div>
+<!-- End Sidebar -->
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top" style="top: 0; left: 0; right: 0; z-index: 1030;">
+  <div class="container d-flex align-items-center">
+
+    <img src="assets/img/group-logo-2.png" alt="Logo" style="height: 50px; margin-right: 10px;">
+
+    <h1 class="logo me-auto"><a>Mediminder Table</a></h1>
+    <!-- Uncomment below if you prefer to use an image logo -->
+    <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+    <nav id="navbar" class="navbar order-last order-lg-0">
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+
+</header><!-- End Header -->
+
+
+<!-- Add New Medicine Modal -->
+<form action="PINAKALATEST.php" method="post">
+<div class="modal fade" id="addItemModal" tabindex="-1" aria-labelledby="addItemModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addItemModalLabel">Add New Medicine</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="medicineName" class="form-label">Medicine Name</label>
+          <input type="text" class="form-control" id="medicineName" name="medicineName" required>
+        </div>
+        <div class="mb-3">
+          <label for="days" class="form-label">Days</label><br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="sunday" name="days[]" value="sunday">
+            <label class="form-check-label" for="sunday">Sunday</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="monday" name="days[]" value="monday">
+            <label class="form-check-label" for="monday">Monday</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="tuesday" name="days[]" value="tuesday">
+            <label class="form-check-label" for="tuesday">Tuesday</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="wednesday" name="days[]" value="wednesday">
+            <label class="form-check-label" for="wednesday">Wednesday</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="thursday" name="days[]" value="thursday">
+            <label class="form-check-label" for="thursday">Thursday</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="friday" name="days[]" value="friday">
+            <label class="form-check-label" for="friday">Friday</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="saturday" name="days[]" value="saturday">
+            <label class="form-check-label" for="saturday">Saturday</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="startTime" class="form-label">Start Time</label>
+              <input type="time" class="form-control" id="startTime" name="startTime" required>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="endTime" class="form-label">End Time</label>
+              <input type="time" class="form-control" id="endTime" name="endTime" required>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="addMedicineBtn" onclick="scheduleReminder();">Add Medicine</button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+
+<!-- Schedule Table -->
+<section id="schedule" class="schedule">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div style="padding-bottom: 45px;"></div>
+        <div style="max-height: 450px; overflow-y: auto;">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Sunday</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+              </tr>
+            </thead>
+            <tbody id="reminderTableBody"> <!-- Schedule rows will be appended here by JavaScript --></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Vendor JS Files -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+
+<!-- Template Main JS File -->
+<script src="assets/js/main.js"></script>
+
+
+<script>
+// Open the modal when the Add Item button is clicked
+document.getElementById('addItemBtn').addEventListener('click', function() {
+    var myModal = new bootstrap.Modal(document.getElementById('addItemModal'), {
+        keyboard: false
+    });
+    myModal.show();
+});
+
+// Handle the Add Medicine button click
+document.getElementById('addMedicineBtn').addEventListener('click', function(event) {
+    const medicineName = document.getElementById('medicineName').value;
+    const days = [];
+    document.querySelectorAll('input[type="checkbox"]:checked').forEach(checkbox => {
+        days.push(checkbox.value);
+    });
+    const startHour = document.getElementById('startTime').value;
+    const endHour = document.getElementById('endTime').value;
+
+    let timeString = '';
+    if (startHour) {
+        timeString += `${startHour} - `;
+    }
+    if (endHour) {
+        timeString += `${endHour}`;
+    }
+
+    // Find the existing row for the specified time
+    const tableRows = document.querySelectorAll('table tbody tr');
+    let existingRow;
+    tableRows.forEach(row => {
+        if (row.cells[0].textContent === timeString) {
+            existingRow = row;
+            return;
+        }
+    });
+
+    // If the row exists, update the corresponding cell and apply background color
+    if (existingRow) {
+        days.forEach(day => {
+            switch(day) {
+                case 'sunday':
+                    existingRow.cells[1].textContent = medicineName;
+                    existingRow.cells[1].style.backgroundColor = 'lightblue'; // Apply background color
+                    break;
+                case 'monday':
+                    existingRow.cells[2].textContent = medicineName;
+                    existingRow.cells[2].style.backgroundColor = 'lightblue'; // Apply background color
+                    break;
+                case 'tuesday':
+                    existingRow.cells[3].textContent = medicineName;
+                    existingRow.cells[3].style.backgroundColor = 'lightblue'; // Apply background color
+                    break;
+                case 'wednesday':
+                    existingRow.cells[4].textContent = medicineName;
+                    existingRow.cells[4].style.backgroundColor = 'lightblue'; // Apply background color
+                    break;
+                case 'thursday':
+                    existingRow.cells[5].textContent = medicineName;
+                    existingRow.cells[5].style.backgroundColor = 'lightblue'; // Apply background color
+                    break;
+                case 'friday':
+                    existingRow.cells[6].textContent = medicineName;
+                    existingRow.cells[6].style.backgroundColor = 'lightblue'; // Apply background color
+                    break;
+                case 'saturday':
+                    existingRow.cells[7].textContent = medicineName;
+                    existingRow.cells[7].style.backgroundColor = 'lightblue'; // Apply background color
+                    break;
+            }
+        });
+    } else if (timeString.trim() !== '') { // Check if timeString is not empty after trimming whitespace
+        // Create a new row and add it to the table
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `
+            <td>${timeString}</td>
+            <td>${days.includes('sunday') ? medicineName : ''}</td>
+            <td>${days.includes('monday') ? medicineName : ''}</td>
+            <td>${days.includes('tuesday') ? medicineName : ''}</td>
+            <td>${days.includes('wednesday') ? medicineName : ''}</td>
+            <td>${days.includes('thursday') ? medicineName : ''}</td>
+            <td>${days.includes('friday') ? medicineName : ''}</td>
+            <td>${days.includes('saturday') ? medicineName : ''}</td>
+        `;
+        document.querySelector('table tbody').appendChild(newRow);
+    }
+
+    // Clear the input fields
+    document.getElementById('medicineName').value = '';
+    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+        checkbox.checked = false;
+    });
+    document.getElementById('startTime').value = '';
+    document.getElementById('endTime').value = '';
+
+    // Close the modal
+    var myModal = bootstrap.Modal.getInstance(document.getElementById('addItemModal'));
+    myModal.hide();
+});
+
+
+
+
+
+
+// DELETING FUNCTION
+// DELETING FUNCTION
+document.getElementById('deleteItemBtn').addEventListener('click', function(event) {
+    // Check if the click event target is the delete button itself
+    if (event.target.classList.contains('delete-btn')) {
+        const deleteBtn = event.target;
+        const row = deleteBtn.closest('tr');
+
+        // Show confirmation modal
+        document.getElementById('confirmationModal').style.display = 'block';
+
+        // Handle confirmation
+        document.getElementById('confirmDeleteBtn').addEventListener('click', function() {
+            // Extract data from the row to identify it in the database
+            const rowData = {
+                time: row.cells[0].textContent,
+                sunday: row.cells[1].textContent,
+                monday: row.cells[2].textContent,
+                tuesday: row.cells[3].textContent,
+                wednesday: row.cells[4].textContent,
+                thursday: row.cells[5].textContent,
+                friday: row.cells[6].textContent,
+                saturday: row.cells[7].textContent
+            };
+
+            // Send delete request to the server
+            fetch('deleteRecord.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(rowData)
+            }).then(response => response.json())
+              .then(data => {
+                  if (data.success) {
+                      // Remove the row from the table if delete was successful
+                      row.remove();
+                      saveTableData();
+                  } else {
+                      alert('Error deleting data');
+                  }
+              })
+              .catch(error => console.error('Error:', error));
+
+            // Hide the confirmation modal
+            document.getElementById('confirmationModal').style.display = 'none';
+        });
+
+        // Cancel deletion
+        document.getElementById('cancelDeleteBtn').addEventListener('click', function() {
+            // Hide the confirmation modal
+            document.getElementById('confirmationModal').style.display = 'none';
+        });
+
+        return; // Exit the function to avoid adding the delete button again
+    }
+
+
+    // Get all table rows
+    const tableRows = document.querySelectorAll('table tbody tr');
+
+    // Loop through each row
+    tableRows.forEach(row => {
+        // Check if the delete button already exists in the row
+        const existingDeleteBtn = row.querySelector('.delete-btn');
+        if (!existingDeleteBtn) {
+            // Add a click event listener to the delete button in each row
+            const deleteBtn = document.createElement('button');
+            deleteBtn.classList.add('btn', 'btn-danger', 'delete-btn');
+            // Create a text node with the text "Delete"
+            const deleteText = document.createTextNode('Delete');
+            // Append the text node to the delete button
+            deleteBtn.appendChild(deleteText);
+            deleteBtn.addEventListener('click', function() {
+                const row = deleteBtn.closest('tr');
+
+                // Extract data from the row to identify it in the database
+                const rowData = {
+                    time: row.cells[0].textContent,
+                    sunday: row.cells[1].textContent,
+                    monday: row.cells[2].textContent,
+                    tuesday: row.cells[3].textContent,
+                    wednesday: row.cells[4].textContent,
+                    thursday: row.cells[5].textContent,
+                    friday: row.cells[6].textContent,
+                    saturday: row.cells[7].textContent
+                };
+
+                // Send delete request to the server
+                fetch('deleteRecord.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(rowData)
+                }).then(response => response.json())
+                  .then(data => {
+                      if (data.success) {
+                          // Remove the row from the table if delete was successful
+                          row.remove();
+                          saveTableData();
+                      } else {
+                          alert('Error deleting data');
+                      }
+                  })
+                  .catch(error => console.error('Error:', error));
+            });
+
+            // Append the delete button to a new cell in the row
+            const actionCell = document.createElement('td');
+            actionCell.style.border = '1px solid #D3D3D3'; // Add this line to style the cell
+            actionCell.style.padding = '10px'; // Add padding of 0.5px
+            actionCell.style.marginTop = '-20px'; // Move the top border up by 1px
+            actionCell.appendChild(deleteBtn);
+            row.appendChild(actionCell);
+
+        } else {
+            // Toggle the visibility of the delete button if it already exists
+            existingDeleteBtn.style.display = existingDeleteBtn.style.display === 'none' ? 'inline-block' : 'none';
+            // Remove the action cell if the delete button is hidden
+            if (existingDeleteBtn.style.display === 'none') {
+                const actionCell = existingDeleteBtn.parentNode;
+                actionCell.parentNode.removeChild(actionCell);
+            }
+        }
+    });
+});
+
+// Function to load the table data from local storage
+function loadTableData() {
+    const tableData = JSON.parse(localStorage.getItem('savedItems')) || [];
+    const tbody = document.querySelector('table tbody');
+    tbody.innerHTML = '';
+    tableData.forEach(rowData => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${rowData.time}</td>
+            <td>${rowData.sunday}</td>
+            <td>${rowData.monday}</td>
+            <td>${rowData.tuesday}</td>
+            <td>${rowData.wednesday}</td>
+            <td>${rowData.thursday}</td>
+            <td>${rowData.friday}</td>
+            <td>${rowData.saturday}</td>
+        `;
+        tbody.appendChild(row);
+    });
+}
+
+// Call loadTableData when the page loads
+window.addEventListener('load', loadTableData);
+
+// Function to save the table data to local storage
+function saveTableData() {
+    const tableData = [];
+    document.querySelectorAll('table tbody tr').forEach(row => {
+        const rowData = {
+            time: row.cells[0].textContent,
+            sunday: row.cells[1].textContent,
+            monday: row.cells[2].textContent,
+            tuesday: row.cells[3].textContent,
+            wednesday: row.cells[4].textContent,
+            thursday: row.cells[5].textContent,
+            friday: row.cells[6].textContent,
+            saturday: row.cells[7].textContent
+        };
+        tableData.push(rowData);
+    });
+    localStorage.setItem('savedItems', JSON.stringify(tableData));
+
+    // Send the table data to the PHP script for saving into the database
+    const formData = new FormData();
+    formData.append('tableData', JSON.stringify(tableData));
+
+    fetch('medimindertablenotif8.php', {
+        method: 'POST',
+        body: formData
+    }).then(response => {
+        if(response.ok) {
+            //okay;
+        } else {
+            alert('Error saving table data');
+        }
+    }).catch(error => {
+        console.error('Error:', error);
+    });
+}
+
+
+
+
+
+
+
+
+  
+// SAVE BUTTON
+document.getElementById('saveItemBtn').addEventListener('click', function() {
+            alert('Save Item button clicked');
+            saveTableData();
+        });
+
+        function saveTableData() {
+    const tableData = [];
+    document.querySelectorAll('table tbody tr').forEach(row => {
+        const rowData = {
+            time: row.cells[0].textContent,
+            sunday: row.cells[1].textContent,
+            monday: row.cells[2].textContent,
+            tuesday: row.cells[3].textContent,
+            wednesday: row.cells[4].textContent,
+            thursday: row.cells[5].textContent,
+            friday: row.cells[6].textContent,
+            saturday: row.cells[7].textContent,
+        };
+        tableData.push(rowData);
+    });
+            localStorage.setItem('savedItems', JSON.stringify(tableData));
+
+            const formData = new FormData();
+            formData.append('tableData', JSON.stringify(tableData));
+
+            fetch('medimindertablenotif8.php', {
+                method: 'POST',
+                body: formData
+            }).then(response => {
+                if(response.ok) {
+                    alert('Table data saved successfully');
+                    scheduleReminders(tableData);
+                } else {
+                    alert('Error saving table data');
+                }
+            }).catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        function loadTableData() {
+            const tableData = JSON.parse(localStorage.getItem('savedItems')) || [];
+            const tbody = document.querySelector('table tbody');
+            tbody.innerHTML = '';
+            tableData.forEach(rowData => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${rowData.time}</td>
+                    <td>${rowData.sunday}</td>
+                    <td>${rowData.monday}</td>
+                    <td>${rowData.tuesday}</td>
+                    <td>${rowData.wednesday}</td>
+                    <td>${rowData.thursday}</td>
+                    <td>${rowData.friday}</td>
+                    <td>${rowData.saturday}</td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+
+
+
+
+
+        
+        function scheduleReminders(tableData) {
+    const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+    const currentDay = new Date().toLocaleString('en-US', { weekday: 'long' }).toLowerCase();
+    const currentDayIndex = days.indexOf(currentDay);
+
+    tableData.forEach(rowData => {
+        const dayData = rowData[days[currentDayIndex]];
+        if (dayData && dayData.trim() !== '') {
+            const time = rowData.time.split(':');
+            const hours = parseInt(time[0]);
+            const minutes = parseInt(time[1]);
+            const now = new Date();
+            const scheduledTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hours, minutes, 0, 0);
+
+            const timeDifference = scheduledTime - now;
+            if (timeDifference > 0) {
+                const reminder = {
+                    medicine: dayData,
+                    day: currentDay.charAt(0).toUpperCase() + currentDay.slice(1),
+                    time: rowData.time,
+                    timestamp: scheduledTime.getTime()
+                };
+
+                localStorage.setItem(`reminder_${scheduledTime.getTime()}`, JSON.stringify(reminder));
+
+                setTimeout(function () {
+                    showReminderNotification(reminder);
+                }, timeDifference);
+            }
+        }
+    });
+}
+
+let reminderInterval;
+
+function showReminderNotification(reminder) {
+    var popupNotification = document.getElementById("popupNotification");
+    var popupMessage = document.getElementById("popupMessage");
+
+    popupMessage.innerHTML = `Reminder: It's time to take your Medicine. Medicine: ${reminder.medicine}, Day: ${reminder.day}, <br>Time: ${reminder.time}`;
+    popupNotification.style.display = "block";
+
+    var notificationSound = document.getElementById("notificationSound");
+    notificationSound.play();
+
+    // Function to hide the notification and stop the sound after 45 seconds
+    const hideNotification = () => {
+        popupNotification.style.display = "none";
+        notificationSound.pause();
+        notificationSound.currentTime = 0;
+    };
+
+    // Set a timeout to hide the notification after 45 seconds
+    const hideNotificationTimeout = setTimeout(() => {
+        hideNotification();
+        // Reschedule the notification to appear again after 2 minutes (120000 ms)
+        reminderInterval = setTimeout(() => {
+            showReminderNotification(reminder);
+        }, 120000);
+    }, 45000);
+
+    // Update the recordMedicineTaken function to clear the timeouts
+    window.recordMedicineTaken = function(response) {
+        clearTimeout(hideNotificationTimeout);
+        clearTimeout(reminderInterval);
+        hideNotification();
+
+        if (response === 'yes') {
+            alert('You have taken your medicine.');
+        } else {
+            alert('You have not taken your medicine.');
+        }
+
+        // Set the flag indicating the reminder was addressed
+        localStorage.setItem(`reminder_addressed_${reminder.timestamp}`, 'true');
+    };
+}
+
+// Call loadTableData when the page loads
+window.addEventListener('load', loadTableData);
+
+document.getElementById('backBtn').addEventListener('click', function() {
+    window.location.href = 'searchmedicineinfolalagyan2.html';
+});
+
+function recordMedicineTaken(response) {
+    if (response === 'yes') {
+        alert('You have taken your medicine.');
+    } else {
+        alert('You have not taken your medicine.');
+    }
+
+    // Close the popup notification
+    document.getElementById('popupNotification').style.display = 'none';
+
+    // Stop the sound
+    var sound = document.getElementById('notificationSound');
+    sound.pause();
+    sound.currentTime = 0;
+}
+
+
+document.getElementById('continueBtn').addEventListener('click', function() {
+    window.location.href = 'historytable12.html';
+});
+
+
+</script>
+
+
+</body>
+
+
+</html>

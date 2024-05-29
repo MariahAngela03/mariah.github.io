@@ -1,0 +1,625 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Medilab Bootstrap Template - Index</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/group-logo.png" rel="icon">
+  <link href="assets/img/group-logo.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Medilab
+  * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top" style="top: 0; left: 0; right: 0; z-index: 1030;">
+  <div class="container d-flex align-items-center">
+
+  
+    <img src="assets/img/group-logo-2.png" alt="Logo" style="height: 50px; margin-right: 10px;">
+    
+    <h1 class="logo me-auto"><a href="index.html">Mediminder</a></h1>
+    <!-- Uncomment below if you prefer to use an image logo -->
+    <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+    <nav id="navbar" class="navbar order-last order-lg-0">
+      <ul>
+        <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+        <li><a class="nav-link scrollto" href="#about">About</a></li>
+        <li><a class="nav-link scrollto" href="#services">Services</a></li>
+        <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pop-up Sign-in/Sign-up</title>
+        <style>
+        /* Styles for the pop-up */
+        .popup {
+          display: none;
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: #f9f9f9;
+          padding: 20px;
+          border: 1px solid #ccc;
+          z-index: 1000;
+          width: 300px; /* Set the width */
+          height: 300px; /* Set the height */
+        }
+        
+        /* Styles for the overlay */
+        .overlay {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0,0,0,0.5);
+          z-index: 999;
+        }
+        
+        /* Styles for the form inside the pop-up */
+        .popup form {
+          display: flex;
+          flex-direction: column;
+        }
+        
+        .popup form input {
+          margin-bottom: 5px;
+        }
+        
+        .popup form input[type="submit"] {
+          background-color: #2c4964;
+          color: white;
+          border: none;
+          cursor: pointer;
+          border-radius: 20px; /* Rounded corners */
+          padding: 10px 20px; /* Add some padding */
+        }
+        
+        .popup form input[type="submit"]:hover {
+          background-color: #2c4964; 
+        }
+        
+        /* Style for the sign-up pop-up to match the sign-in pop-up */
+        .signup-popup {
+          width: 300px;
+          height: 550px;
+        }
+        </style>
+        </head>
+        <body>
+        
+        <!-- Button to open the pop-up -->
+        <button onclick="openPopup()" style="background-color: #2c4964;; color: white; border: none; border-radius: 20px; padding: 10px 20px; cursor: pointer; margin-left: 10px;">Sign In</button>
+        
+        <!-- The pop-up -->
+        <div id="popup" class="popup">
+          <h2>Sign In</h2>
+          <form action="searchmedicineinfolalagyan2.html" method="post">
+            <label for="username">Email:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <input type="submit" value="Sign In"> 
+          </form>
+          <p-0>Don't have an account? <a href="#" onclick="showSignup()">Sign Up</a></p-0>
+        </div>
+        
+       <!-- The sign-up pop-up -->
+<div id="signupPopup" class="popup signup-popup">
+    <h2>Sign Up</h2>
+    <form action="index.html" method="post">
+      <label for="newEmail">Email:</label>
+      <input type="email" id="newEmail" name="newEmail" required>
+      <label for="newFirstName">First Name:</label>
+      <input type="text" id="newFirstName" name="newFirstName" required>
+      <label for="newLastName">Surname:</label>
+      <input type="text" id="newLastName" name="newLastName" required>
+      <label for="newPassword">Password:</label>
+      <input type="password" id="newPassword" name="newPassword" required>
+      <label for="newGender">Gender:</label>
+      <select id="newGender" name="newGender" required>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+      <label for="newPhoneNumber">Phone Number:</label>
+      <input type="tel" id="newPhoneNumber" name="newPhoneNumber" required pattern="09\d{9}">
+      <input type="submit" value="Sign Up" style="margin-top: 50px;">
+    </form>
+  </div>
+  
+        
+        <!-- The overlay -->
+        <div id="overlay" class="overlay"></div>
+        
+        <script>
+        function openPopup() {
+          document.getElementById("popup").style.display = "block";
+          document.getElementById("overlay").style.display = "block";
+        }
+        
+        function showSignup() {
+          document.getElementById("popup").style.display = "none"; // Hide the sign-in pop-up
+          document.getElementById("overlay").style.display = "none"; // Hide the overlay
+          document.getElementById("signupPopup").style.display = "block"; // Show the sign-up pop-up
+        }
+        
+        </script>
+</div>
+</header><!-- End Header -->
+
+<!-- ======= Hero Section ======= -->
+<title>Welcome to Mediminder</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#hero {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center horizontally */
+  text-align: center; /* Center text within the container */
+  height: 90vh; /* Slightly reduce the full viewport height */
+  padding-top: 2vh; /* Add some padding to move content higher */
+}
+
+#hero .container {
+  max-width: 900px; /* Limit the width of the container */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+p {
+  font-size: 18px;
+  margin: 0 100px; /* Preserve existing margins */
+}
+
+.why-us {
+  display: flex;
+  justify-content: space-between; /* Align items at the left and right */
+  margin: 0 auto; /* Center the container horizontally */
+  max-width: 1100px; /* Set a maximum width for better responsiveness */
+  padding: 0 20px; /* Add padding */
+}
+
+.why-us .box {
+  flex: 0 1 calc(48% - 20px); /* Take up half of the space minus padding */
+  margin-bottom: 20px; /* Add some bottom margin */
+}
+
+.why-us .content {
+  background-color: #2c4964; /* Change background color to match locate pharmacy */
+  border: 1px solid #2c4964; /* Change border color to match locate pharmacy */
+  border-radius: 10px; /* Add some border radius */
+  padding: 20px; /* Add padding */
+  color: white; /* Change text color for visibility */
+  text-align: center; /* Center text within the container */
+}
+
+.why-us .content .inner-box {
+  background-color: white; /* Set background color to white */
+  padding: 15px; /* Add padding */
+  border-radius: 8px; /* Add some border radius */
+  color: #2c4964; /* Set text color for visibility */
+}
+
+.why-us h3 {
+  margin-top: auto;
+  margin-left: 0; /* Reset margin */
+  margin-bottom: 10px; /* Add some bottom margin */
+}
+
+.why-us .justify {
+  text-align: justify;
+}
+
+.why-us .icon-box {
+  margin-top: 10px; /* Add top margin for spacing */
+}
+
+.why-us .content p {
+  margin: 0; /* Reset margin */
+  font-size: 20px; /* Adjust font size */
+}
+
+.locate-pharmacy .content {
+  background-color: #2c4964; /* Change background color */
+  border: 1px solid #2c4964; /* Add a border */
+  border-radius: 8px; /* Add some border radius */
+  padding: 20px; /* Add padding */
+  text-align: center; /* Center text within the container */
+  color: #2c4964; /* Change text color to match the outer box */
+}
+
+.locate-pharmacy .inner-box {
+  background-color: white; /* Set background color to white */
+  padding: 15px; /* Add padding */
+  border-radius: 8px; /* Add some border radius */
+  color: #2c4964; /* Set text color for visibility */
+}
+
+.locate-pharmacy .content p {
+  margin: 20px 0; /* Add some margin */
+  font-size: 16px; /* Adjust font size */
+}
+
+/* Change font size for p-2 */
+.why-us p-2 {
+  font-size: 20px; /* Adjust font size */
+}
+
+</style>
+
+</head>
+<body>
+
+<section id="hero" class="d-flex align-items-center">
+  <div class="container">
+    <h1>Welcome to Mediminder</h1>
+    <p>Improving Medication Adherence for Better Health</p>
+  </div>
+</section><!-- End Hero -->
+
+
+<main id="main">
+  <!-- ======= Why Us Section ======= -->
+  <section id="why-us" class="why-us">
+    <div class="box">
+      <div class="content">
+        <h3>Why choose Mediminder?</h3>
+        <div class="justify">
+          <p class="p-1"> The Mediminder web app reminds users to take their medicine and provides important information about dosage and side effects.
+            It also helps users find nearby pharmacies for refills, simplifying their health routine. Overall, the app acts as a helpful friend, ensuring medication adherence and providing necessary health information. </p>
+        </div>
+      </div>
+    </div>
+    <div class="box locate-pharmacy">
+      <div class="content">
+        <div class="icon-boxes d-flex flex-column center">
+          <div class="icon-box mt-6 mt-xl-4">
+            <i class="bx bx-map"></i>
+            <div class="center" onclick="window.location.href='locatepharmacy.html'">
+              <h4>Locate Pharmacy</h4>
+              <p class="p-2">Refill your meds with ease! Enter your medication and use this to find nearby pharmacies carrying it.</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Why Us Section -->
+</main>
+
+
+  <!-- ======= About Section ======= -->
+  <section id="about" class="about">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch position-relative">
+          <a href="https://www.youtube.com/watch?v=ZzJtgQMblEg" class="glightbox play-btn mb-4"></a>
+        </div>
+        <div class="col-xl-7 col-lg-3 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-3 px-lg-4">
+          <h2><strong>About Mediminder</strong></h2> <!-- Updated line -->
+          <style>
+            h2{
+              padding: 10px;
+            }
+            #about {
+              text-align: center;
+            }
+            .description {
+              text-align: justify;
+            }
+            .description p {
+              padding: 20px;
+            }
+            .icon-box {
+              text-align: left;
+            }
+          </style>
+          <p class="description">Medications can be helpful, but if not taken correctly, they can pose risks. With Mediminder, users can create flexible, detailed schedules to avoid missing doses and adhere to their doctor's prescriptions. As highlighted by Linda Schultz (2023), timely administration of medications is essential for effectiveness and to minimize potential side effects. Mediminder assists users in managing their medications properly, promoting safer and more effective treatment.</p>
+          <div class="icon-box">
+            <div class="icon"><i class="bx bx-bulb"></i></div>
+            <h4 class="title"><a href="">Innovative</a></h4>
+            <p class="description">Mediminder is a product of our team's dedication to tackling the issue of medication non-adherence. It's designed to be secure and easy to use, ensuring that users never miss their medications and can manage their health more effectively.</p>
+          </div>
+          <div class="icon-box">
+            <div class="icon"><i class="bx bx-universal-access"></i></div>
+            <h4 class="title"><a href="">Empowering</a></h4>
+            <p class="description">Mediminder gives users the tools they need to take control of their medication routines, leading to better health outcomes. By prioritizing adherence, it reduces the stress and worry for caregivers, knowing that their loved ones are managing their medications effectively.</p>
+          </div>
+          <div class="icon-box">
+            <div class="icon"><i class="bx bx-atom"></i></div>
+            <h4 class="title"><a href="">Enhancement</a></h4>
+            <p class="description">We are dedicated to continually improving Mediminder by introducing new features that enhance the user experience and support medication adherence. Our commitment lies in helping users stay on track with their medications, ultimately leading to better health and well-being.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- End About Section -->
+
+</main>
+
+<!-- JavaScript for making navigation links active -->
+<script>
+  // Get all the navigation links
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  // Loop through each navigation link and add a click event listener
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      // Remove the 'active' class from all navigation links
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+      });
+      // Add the 'active' class to the clicked link
+      this.classList.add('active');
+    });
+  });
+</script>
+
+<!-- ======= Services Section ======= -->
+<section id="services" class="services">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Services</h2>
+      <p-4>Explore the comprehensive services of Mediminder, your ultimate medication companion. We offer personalized medication schedules, reminders, and medication history to keep you on track. Be alerted to potential drug interactions and enjoy our user-friendly interface. Additionally, with family access and privacy measures, trust Mediminder for convenience, reliability, and peace of mind in managing your medications.</p-4>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+        <div class="icon-box">
+          <div class="icon"><i class="fas fa-calendar-days"></i></div>
+          <h4><a href="">Medication Schedules</a></h4>
+          <style>
+            p-6{
+              text-align: center;
+            }
+        </style>
+          <p-6>Personalized medication schedules customized to each user's needs, including dosage, frequency, and timing.</p-6>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+        <div class="icon-box">
+          <div class="icon"><i class="fas fa-bell"></i></div>
+          <h4><a href="">Reminders and Notifications</a></h4>
+          <style>
+            p-7{
+              text-align: center;
+            }
+        </style>
+          <p-7> Gentle reminders and customizable notifications to ensure users never miss a dose.</p-7>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+        <div class="icon-box">
+          <div class="icon"><i class="fas fa-hospital-user"></i></div>
+          <h4><a href="">Medication History</a></h4>
+          <style>
+            p-8{
+              text-align: center;
+            }
+        </style>
+          <p-8>Ability to track medication adherence and history, allowing users to monitor their progress over time.</p-8>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+        <div class="icon-box">
+          <div class="icon"><i class="fas fa-pills"></i></div>
+          <h4><a href="">Drug Interaction Alert</a></h4>
+          <style>
+            p-9{
+              text-align: center;
+            }
+        </style>
+          <p-9>Receive timely alerts for potential drug interactions based on your medication list, ensuring safe usage and minimizing risks.</p-9>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+        <div class="icon-box">
+          <div class="icon"><i class="fas fa-wheelchair"></i></div>
+          <h4><a href="">Family and Caregiver Access</a></h4>
+          <style>
+            p-10{
+              text-align: center;
+            }
+        </style>
+          <p-10>Options for family members or caregivers to receive notifications or access medication schedules for better support.</p-10>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+        <div class="icon-box">
+          <div class="icon"><i class="fas fa-person"></i></div>
+          <h4><a href="">User-Friendly Interface</a></h4>
+          <style>
+            p-10{
+              text-align: center;
+            }
+        </style>
+          <p-11> Intuitive design for easy navigation and seamless user experience, suitable for all ages.</p-11>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mx-auto">
+        <div class="icon-box">
+          <div class="icon"><i class="fas fa-lock"></i></div>
+          <h4><a href="">Privacy and Security</a></h4>
+          <style>
+            p-12{
+              text-align: center;
+            }
+        </style>
+          <p-12>Comprehensive privacy measures to protect user data and ensure confidentiality.</p-12>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section><!-- End Services Section -->
+<style>
+  p-4, p-6, p-7, p-8, p-9, p-10, p-11, p-12 {
+    color: #262e28;
+  }
+
+  .icon-box:hover p-4, 
+  .icon-box:hover p-6, 
+  .icon-box:hover p-7, 
+  .icon-box:hover p-8, 
+  .icon-box:hover p-9, 
+  .icon-box:hover p-10, 
+  .icon-box:hover p-11, 
+  .icon-box:hover p-12 {
+    color: #fff;
+  }
+</style>
+
+<!-- ======= Contact Section ======= -->
+
+<section id="contact" class="contact">
+    <div class="container" style="padding-left: 20px;">
+      <div class="section-title">
+        <h2>Contact</h2>
+        <p>Have a question or need assistance? We're here to help! Please don't hesitate to reach out if you have any queries. You can find our contact details below:</p>
+      </div>
+    </div>
+  
+    <div class="container" style="padding-left: 250px;">
+      <div class="row mt-7 justify-content-center">
+        <div class="col-lg-8">
+          <div class="info">
+            <div class="email mb-4 d-flex align-items-center">
+              <i class="bi bi-envelope"></i>
+              <h4 class="ml-2 mb-0">Email:</h4>
+              <p class="ml-2 mb-0">mediminder@gmail.com</p>
+            </div>
+            <div class="phone d-flex align-items-center mt-4">
+              <i class="bi bi-phone"></i>
+              <h4 class="ml-2 mb-0">Call:</h4>
+              <p class="ml-2 mb-0">+1 5589 55488 55</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="container" style="padding-left: 20px;">
+      <div class="section-title mt-5">
+        <p style="text-align: center; font-size: 20px;">We look forward to assisting you!</p>
+      </div>
+    </div>
+  </section>
+  
+  <style>
+    .contact .info {
+      text-align: center;
+    }
+    
+    .contact .info .email,
+    .contact .info .phone {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .contact .info i {
+      font-size: 24px;
+      color: #2c4964;
+      margin-right: 5px;
+    }
+    
+    .contact .info h4,
+    .contact .info p {
+      font-size: 20px; /* Ensure the same font size */
+      color: #2c4964;
+      margin-bottom: 0;
+      margin-left: 5px; /* Move closer to the icon */
+    }
+    
+    .contact .info .mt-4 {
+      margin-top: 20px; /* Add space between email and phone sections */
+    }
+    
+    .section-title {
+      text-align: center;
+    }
+    
+    .section-title.mt-5 {
+      margin-top: 3rem;
+    }
+  </style>
+  
+</section><!-- End Contact Section-->
+
+<!-- ======= Footer ======= -->
+  <footer id="footer">
+
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Mediminder</span></strong>. All Rights Reserved
+        </div>
+
+      </footer><!-- End Footer -->
+
+      <div id="preloader"></div>
+      <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    
+      
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
+

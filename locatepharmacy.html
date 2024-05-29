@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Medilab Bootstrap Template - Index</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Medilab
+  * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top" style="top: 0; left: 0; right: 0; z-index: 1030;">
+  <div class="container d-flex align-items-center">
+    
+    <h1 class="logo me-auto"><a href="">Locate Pharmacy</a></h1>
+    <!-- Uncomment below if you prefer to use an image logo -->
+    <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+    <nav id="navbar" class="navbar order-last order-lg-0">
+      <ul>
+        <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+        <li><a class="nav-link scrollto" href="#about">About</a></li>
+        <li><a class="nav-link scrollto" href="#services">Services</a></li>
+        <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pop-up Sign-in/Sign-up</title>
+        <style>
+
+        
+        /* Styles for the pop-up */
+        .popup {
+          display: none;
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: #f9f9f9;
+          padding: 20px;
+          border: 1px solid #ccc;
+          z-index: 1000;
+          width: 300px; /* Set the width */
+          height: 300px; /* Set the height */
+        }
+        
+        /* Styles for the overlay */
+        .overlay {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0,0,0,0.5);
+          z-index: 999;
+        }
+        
+        /* Styles for the form inside the pop-up */
+        .popup form {
+          display: flex;
+          flex-direction: column;
+        }
+        
+        .popup form input {
+          margin-bottom: 5px;
+        }
+        
+        .popup form input[type="submit"] {
+          background-color: #2c4964;
+          color: white;
+          border: none;
+          cursor: pointer;
+          border-radius: 20px; /* Rounded corners */
+          padding: 10px 20px; /* Add some padding */
+        }
+        
+        .popup form input[type="submit"]:hover {
+          background-color: #2c4964; 
+        }
+        
+        /* Style for the sign-up pop-up to match the sign-in pop-up */
+        .signup-popup {
+          width: 300px;
+          height: 550px;
+        }
+        </style>
+        </head>
+        <body>
+        
+        <!-- Button to open the pop-up -->
+        <button onclick="openPopup()" style="background-color: #2c4964;; color: white; border: none; border-radius: 20px; padding: 10px 20px; cursor: pointer; margin-left: 10px;">Sign In</button>
+        
+        <!-- The pop-up -->
+        <div id="popup" class="popup">
+          <h2>Sign In</h2>
+          <form action="databaselogin.php" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <input type="submit" value="Sign In"> 
+          </form>
+          <p-0>Don't have an account? <a href="#" onclick="showSignup()">Sign Up</a></p-0>
+        </div>
+        
+       <!-- The sign-up pop-up -->
+<div id="signupPopup" class="popup signup-popup">
+    <h2>Sign Up</h2>
+    <form action="databaselogin.php" method="post">
+      <label for="newEmail">Email:</label>
+      <input type="email" id="newEmail" name="newEmail" required>
+      <label for="newFirstName">First Name:</label>
+      <input type="text" id="newFirstName" name="newFirstName" required>
+      <label for="newLastName">Surname:</label>
+      <input type="text" id="newLastName" name="newLastName" required>
+      <label for="newPassword">Password:</label>
+      <input type="password" id="newPassword" name="newPassword" required>
+      <label for="newGender">Gender:</label>
+      <select id="newGender" name="newGender" required>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+      <label for="newPhoneNumber">Phone Number:</label>
+      <input type="tel" id="newPhoneNumber" name="newPhoneNumber" required pattern="09\d{9}">
+      <input type="submit" value="Sign Up" style="margin-top: 50px;">
+    </form>
+  </div>
+  
+        
+        <!-- The overlay -->
+        <div id="overlay" class="overlay"></div>
+        
+        <script>
+        function openPopup() {
+          document.getElementById("popup").style.display = "block";
+          document.getElementById("overlay").style.display = "block";
+        }
+        
+        function showSignup() {
+          document.getElementById("popup").style.display = "none"; // Hide the sign-in pop-up
+          document.getElementById("overlay").style.display = "none"; // Hide the overlay
+          document.getElementById("signupPopup").style.display = "block"; // Show the sign-up pop-up
+        }
+        
+        </script>
+</div>
+</header><!-- End Header -->
+
+<!-- ======= Hero Section ======= -->
+<title>Welcome to Mediminder</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#hero {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center horizontally */
+  text-align: center; /* Center text within the container */
+  height: 90vh; /* Slightly reduce the full viewport height */
+  padding-top: 2vh; /* Add some padding to move content higher */
+}
+
+#hero .container {
+  max-width: 900px; /* Limit the width of the container */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+p {
+  font-size: 18px;
+  margin: 0 100px; /* Preserve existing margins */
+}
+
+.why-us {
+  display: flex;
+  justify-content: space-between; /* Align items at the left and right */
+  margin: 0 auto; /* Center the container horizontally */
+  max-width: 1100px; /* Set a maximum width for better responsiveness */
+  padding: 0 20px; /* Add padding */
+}
+
+.why-us .box {
+  flex: 0 1 calc(48% - 20px); /* Take up half of the space minus padding */
+  margin-bottom: 20px; /* Add some bottom margin */
+}
+
+.why-us .content {
+  background-color: #2c4964; /* Change background color to match locate pharmacy */
+  border: 1px solid #2c4964; /* Change border color to match locate pharmacy */
+  border-radius: 10px; /* Add some border radius */
+  padding: 20px; /* Add padding */
+  color: white; /* Change text color for visibility */
+  text-align: center; /* Center text within the container */
+}
+
+.why-us .content .inner-box {
+  background-color: white; /* Set background color to white */
+  padding: 15px; /* Add padding */
+  border-radius: 8px; /* Add some border radius */
+  color: #2c4964; /* Set text color for visibility */
+}
+
+.why-us h3 {
+  margin-top: auto;
+  margin-left: 0; /* Reset margin */
+  margin-bottom: 10px; /* Add some bottom margin */
+}
+
+.why-us .justify {
+  text-align: justify;
+}
+
+.why-us .icon-box {
+  margin-top: 10px; /* Add top margin for spacing */
+}
+
+.why-us .content p {
+  margin: 0; /* Reset margin */
+  font-size: 20px; /* Adjust font size */
+}
+
+.locate-pharmacy .content {
+  background-color: #2c4964; /* Change background color */
+  border: 1px solid #2c4964; /* Add a border */
+  border-radius: 8px; /* Add some border radius */
+  padding: 20px; /* Add padding */
+  text-align: center; /* Center text within the container */
+  color: #2c4964; /* Change text color to match the outer box */
+}
+
+.locate-pharmacy .inner-box {
+  background-color: white; /* Set background color to white */
+  padding: 15px; /* Add padding */
+  border-radius: 8px; /* Add some border radius */
+  color: #2c4964; /* Set text color for visibility */
+}
+
+.locate-pharmacy .content p {
+  margin: 20px 0; /* Add some margin */
+  font-size: 16px; /* Adjust font size */
+}
+
+/* Change font size for p-2 */
+.why-us p-2 {
+  font-size: 20px; /* Adjust font size */
+}
+
+</style>
+
+</head>
+<body>
+
+
+
+
+
+<!-- ======= Footer ======= -->
+  <footer id="footer">
+
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Mediminder</span></strong>. All Rights Reserved
+        </div>
+
+      </footer><!-- End Footer -->
+
+      <div id="preloader"></div>
+      <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    
+                <!-- Search Bar -->
+                <div class="topnav">
+              <div class="search-container">
+                  <form id="map-src-form">
+                      <input type="text" placeholder="Search.." id="search-input" name="search">
+                      <button type="submit"><i class="fa fa-search"></i></button>
+                  </form>
+              </div>
+          </div>
+
+          <div>
+          <iframe style="border:0; width: 100%; height: 350px;"src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123911.52015335503!2d121.0857668660063!3d13.944608204959586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd13576170055f%3A0xe6da25b39082662a!2sLipa%2C%20Batangas%2C%20Philippines!5e0!3m2!1sen!2sus!4v1716714033207!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      
+          <style>
+
+    /* Container for the search input and button */
+    .search-container {
+      position: relative;
+      top:-60px;
+      right: 10px;
+      text-align: center;
+    }
+
+    /* Styling for the search input */
+    .search-container input[type="text"] {
+      padding: 10px;
+      margin-top: 150px; /* Remove any top margin */
+      width: 100%;
+      max-width: 400px;
+    }
+
+    /* Styling for the search button */
+    .search-container button {
+      padding: 10px;
+      margin-top: 10px; /* Add a margin between the input and button */
+    }
+  </style>
+
+</style>
+      
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>

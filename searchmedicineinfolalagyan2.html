@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Mediminder</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/group-logo.png" rel="icon">
+  <link href="assets/img/group-logo.png " rel="apple-touch-icon">
+    <!-- Favicons -->
+    <link href="assets/img/group-logo.png" rel="icon">
+  <link href="assets/img/group-logo.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Medilab
+  * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+  <style>
+    /* Add this CSS rule to center the <p> elements */
+
+    .custom-user-icon {
+      background-color: #2c4964; /* Light blue background color */
+      width: 50px; /* Set width */
+      height: 50px; /* Set height */
+      padding: 0; /* Remove padding */
+      display: flex; /* Use flexbox to center the icon */
+      align-items: center; /* Center the icon vertically */
+      justify-content: center; /* Center the icon horizontally */
+      border-radius: 50%; /* Make the button a perfect circle */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a slight shadow */
+      transition: transform 0.2s; /* Add a transition for hover effect */
+      position: relative;
+      color: #fff; /* Ensure icon color stays white */
+    }
+
+    .custom-user-icon::after {
+      display: none; /* Hide the dropdown arrow */
+    }
+
+    .custom-user-icon:hover {
+      transform: scale(1.1); /* Slightly enlarge the button on hover */
+      background-color:#2c4964; /* Ensure background color remains light blue */
+      color: #fff; /* Ensure icon color stays white */
+    }
+
+    .custom-user-icon:focus, 
+    .custom-user-icon:active {
+      background-color: #2c4964; /* Ensure background color remains light blue */
+      color: #fff; /* Ensure icon color stays white */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Maintain shadow */
+      outline: none; /* Remove outline */
+    }
+
+    .custom-icon {
+      color: #fff; /* Change icon color */
+      font-size: 1.5rem; /* Increase icon size */
+    }
+
+
+    #popupNotification {
+        display: none;
+        position: fixed;
+        top: 430px;
+        right: 20px;
+        width: 355px;
+        background: linear-gradient(135deg, #2c4964, #00aaff);
+        color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        font-family: 'Arial', sans-serif;
+        z-index: 1000;
+        animation: fadein 0.7s ease-in-out, ease-in-out 4.3s;
+    }
+
+    #popupNotification span {
+        font-size: 17px;
+        color: #fff;
+        margin-right: 20px;
+        text-align: justify;
+    }
+
+    @keyframes fadein {
+        from {
+            transform: translateY(1px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeout {
+        from {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateY(1px);
+            opacity: 0;
+        }
+    }
+
+#popupNotification button {
+    /* General button styles */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px; /* Smaller font size */
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 6px 18px; /* Smaller padding */
+}
+
+#popupNotification .yes-button {
+    background-color: #4CAF50; /* Green */
+}
+
+#popupNotification .no-button {
+    background-color: #f44336; /* Red */
+}
+
+
+  </style>
+
+</head>
+
+<body>
+<div id="popupNotification">
+    <span id="popupMessage">This is a notification message!</span>
+    <br>
+    <br>
+    <span>Have you taken your medicine?</span>
+    <button class="yes-button" onclick="recordMedicineTaken('yes')">Yes</button>
+    <button class="no-button" onclick="recordMedicineTaken('no')">No</button>
+</div>
+
+    <audio id="notificationSound" src="IphoneAlarmSoundEffect.mp3" preload="auto"></audio>
+</div>
+
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top" style="top: 0; left: 0; right: 0; z-index: 1030;">
+    <div class="container d-flex align-items-center">
+
+    <img src="assets/img/group-logo-2.png" alt="Logo" style="height: 50px; margin-right: 10px;">
+
+      <h1 class="logo me-auto"><a href="index.html">Mediminder</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+            <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+            <li><a class="nav-link scrollto" href="#appointment">I am</a></li>
+            <li><a class="nav-link scrollto" href="#medicine-info">Medicine Info</a></li> <!-- Updated href -->
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+  
+</header><!-- End Header --> 
+
+
+ <!-- ======= Hero Section ======= -->
+<title>Welcome to Mediminder</title>
+
+<style>
+
+
+/* Container for result and image */
+.result-container {
+  display: flex;
+  align-items: flex-start; /* Align items at the start of the container */
+  margin-top: 10px; /* Add some space between the search bar and the result container */
+}
+
+/* Medicine result styling */
+#medicine-result {
+  width: 60%; /* Adjust width as needed */
+  max-width: 600px; /* Max width for the card */
+  margin-right: 20px; /* Space between the result and the image */
+}
+
+.card {
+  background: #fff; /* White background for the card */
+  border: 1px solid #ddd; /* Light border for the card */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 20px;
+}
+
+.card h3 {
+  text-align: left; /* Left-align the heading */
+}
+
+.card p {
+  text-align: justify; /* Justify text for paragraphs */
+  margin-bottom: 10px;
+}
+
+/* Image container styling */
+#medicine-image {
+  width: 40%; /* Adjust width as needed */
+} 
+
+#medicine-image img {
+  max-width: 100%; /* Ensure image fits within the container */
+  border-radius: 8px; /* Optional: rounded corners for the image */
+}
+
+/* Optional: Styling for the search bar */
+.search-container {
+  text-align: center;
+}
+
+.search-container input[type="text"] {
+  padding: 10px;
+  margin-top: 10px;
+  width: 80%;
+  max-width: 400px;
+}
+
+.search-container button {
+  padding: 10px;
+  margin-top: 10px;
+}
+
+  
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+#hero {
+  width: 100%;
+  height: 90vh;
+  background: url("assets/img/hero-bg copy.jpg") top center;
+  background-size: cover;
+  margin-bottom: -100px;
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  text-align: center; /* Center text */
+  padding: 0 20px; /* Padding for small screens */
+}
+
+  #hero .container {
+    max-width: 900px; /* Limit the width of the container */
+    margin: 0 auto; /* Center the container horizontally */
+  }
+
+  p {
+    font-size: 20px;
+    margin: 0 100px; /* Preserve existing margins */
+  }
+</style>
+</head>
+<body>
+  
+
+
+<section id="hero" class="d-flex align-items-center">
+  <div class="container">
+
+  </div>
+</section><!-- End Hero -->
+  
+
+<main id="main">
+    <!-- ======= Why Us Section ======= -->
+    <section id="why-us" class="why-us">
+      <div class="container">
+
+      </div>
+    </section><!-- End Why Us Section -->
+
+   <!-- ======= I am Section ======= -->
+<section id="appointment" class="appointment section-bg">
+    <div class="container">
+  
+        <div class="row">
+            <div class="col-md-6">
+                <img src="assets/img/iamphoto.jpeg" class="img-fluid" alt="">
+            </div>
+            <div class="col-md-6">
+                <div class="section-title">
+                    <h2>How can we help?</h2>
+                    <p>We're dedicated to providing you with the help and assistance you need to stay on track with your medications and ensure you have a smooth and stress-free experience with our medication reminder service. Let us help you take control of your health and well-being.</p>
+                </div>
+                <form id="appointmentForm" action="databaseiam.php" method="post" role="form" class="php-email-form">
+    <div class="row">
+        <div class="col-md-6 form-group mt-3">
+            <select name="who" id="who" class="form-select">
+                <option value="">I am a...</option>
+                <option value="Patient">Patient</option>
+                <option value="Caregiver">Caregiver</option>
+            </select>
+            <div class="validate"></div>
+        </div>
+        <div class="col-md-6 form-group mt-3">
+            <input type="text" class="form-control" name="condition" placeholder="What is your health condition?" data-rule="minlen:4" data-msg="Please enter at least 4 characters">
+            <div class="validate"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-end mt-3">
+            <button type="submit">Submit</button>
+        </div>
+    </div>
+    <div class="mb-3">
+        <div class="loading">Loading</div>
+        <div class="error-message"></div>
+        <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
+    </div>
+</form>
+
+            </div>
+        </div>
+  
+    </div>
+
+</section>  
+
+<!-- I am Section -->
+
+   <!-- ======= Medicine Info Section ======= -->
+<section id="medicine-info" class="medicine-info">
+  <div class="container">
+      <!-- Right side with search bar and medicine info -->
+      <div class="medicine-info-container">
+          <div class="section-title">
+              <h2>Medicine Info</h2>
+              <p>Medicine information provides comprehensive details about a medication, including its uses, side effects, dosage, and interactions with other drugs. This information is crucial for ensuring safe and effective treatment, helping healthcare professionals and patients make informed decisions. Understanding medicine information helps maximize therapeutic benefits while minimizing potential risks.</p>
+          </div>
+          <!-- Search Bar -->
+          <div class="topnav">
+              <div class="search-container">
+                  <form id="medicine-search-form">
+                      <input type="text" placeholder="Search.." id="search-input" name="search">
+                      <button type="submit"><i class="fa fa-search"></i></button>
+                  </form>
+              </div>
+          </div>
+          <!-- Display Area for Medicine Info and Image -->
+          <div class="result-container">
+              <div id="medicine-result" class="medicine-info">
+                  <!-- Medicine info will be displayed here -->
+              </div>
+              <div id="medicine-image" class="medicine-image">
+                  <!-- Image will be displayed here -->
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<script>
+    document.getElementById("medicine-search-form").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent form submission
+    
+      // Get the search query
+      var searchQuery = document.getElementById("search-input").value.trim().toLowerCase();
+    
+      // Call a function to fetch and display medicine info based on the search query
+      displayMedicineInfo(searchQuery.toLowerCase());
+    });
+    
+    function displayMedicineInfo(searchQuery) {
+      // Dummy data for demonstration, including image paths
+      var medicineData = {
+        "amlodipine": {
+          "name": "Amlodipine <i>(Amlodipine Besilate)</i>",
+          "uses": "Treats high blood pressure (hypertension) and chest pain (angina)",
+          "side_effects": "May cause swelling in ankles or feet, dizziness, flushing, and palpitations",
+          "dosage": "Typically 5 mg once daily, may be adjusted by a healthcare provider",
+          "interactions": "Can interact with medications like simvastatin, atorvastatin, and certain antifungal medications",
+          "image": "assets/img/medicine/amlodipine.avif"
+        },
+        "cetirizine": {
+          "name": "Cetirizine <i>(Cetirizine Dihydrochloride)</i>",
+          "uses": "Relieves allergy symptoms such as sneezing, itching, and runny nose",
+          "side_effects": "Can cause drowsiness, dry mouth, headache, and fatigue",
+          "dosage": "Typically 10 mg once daily for adults",
+          "interactions": "May interact with alcohol and medications causing drowsiness",
+          "image": "assets/img/medicine/cetirizine.png"
+        },
+        "metformin": {
+          "name": "Metformin <i>(Metformin Hydrochloride)</i>",
+          "uses": "Treats type 2 diabetes",
+          "side_effects": "Common side effects include diarrhea, nausea, and stomach upset. Rare but serious side effects may include lactic acidosis.",
+          "dosage": "Typically started at a low dose and gradually increased. The usual maintenance dose is 500 mg to 2,000 mg per day, taken with meals.",
+          "interactions": "May interact with some medications, including certain antibiotics and drugs used to treat high blood pressure.",
+          "image": "assets/img/medicine/metformin.avif"
+        }
+        // Ilalagay to sa database. 
+      };
+    
+      // Clear previous search results
+      var medicineResult = document.getElementById("medicine-result");
+      var medicineImage = document.getElementById("medicine-image");
+      medicineResult.innerHTML = "";
+      medicineImage.innerHTML = "";
+    
+      // Check if the search query matches any medicine
+      if (medicineData.hasOwnProperty(searchQuery)) {
+        // If the medicine is found, display its information
+        var medicine = medicineData[searchQuery];
+        var infoHTML = "<div class='card'>";
+        infoHTML += "<h3>" + medicine.name + "</h3>"; // Use the formatted name
+        infoHTML += "<p><strong>Uses:</strong> " + medicine.uses + "</p>";
+        infoHTML += "<p><strong>Side Effects:</strong> " + medicine.side_effects + "</p>";
+        infoHTML += "<p><strong>Dosage:</strong> " + medicine.dosage + "</p>";
+        infoHTML += "<p><strong>Interactions:</strong> " + medicine.interactions + "</p>";
+        infoHTML += "</div>";
+        medicineResult.innerHTML = infoHTML;
+    
+        // Display the image if available
+        if (medicine.image) {
+          var imageHTML = "<img src='" + medicine.image + "' alt='" + searchQuery + "'>";
+          medicineImage.innerHTML = imageHTML;
+        }
+      } else {
+        // If no matching medicine is found, display a message
+        medicineResult.innerHTML = "<div class='card'><p>No information found for the entered medicine.</p></div>";
+      }
+    }
+
+    document.getElementById('appointmentForm').addEventListener('submit', function(event) {
+        // Prevent the default form submission
+        event.preventDefault();
+        
+        // Redirect to another page
+        window.location.href = 'medimindertablenotif8.html';
+    });
+</script>
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+<div class="container d-md-flex py-4">
+  <div class="me-md-auto text-center text-md-start">
+    <div class="copyright">
+      &copy; Copyright <strong><span>Mediminder</span></strong>. All Rights Reserved
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+
+<!-- Template Main JS File -->
+<script src="assets/js/main.js"></script>
+
+<script>
+  // Add this script to handle active class on click
+  document.querySelectorAll('#navbar .nav-link').forEach(link => {
+    link.addEventListener('click', function() {
+      document.querySelectorAll('#navbar .nav-link').forEach(nav => nav.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  // Ensure the correct section is active on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('#navbar .nav-link');
+    
+    // Slight delay to ensure sections are fully loaded
+    setTimeout(() => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach(link => {
+              link.classList.remove('active');
+              if (link.getAttribute('href').includes(id)) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+      }, { threshold: 0.5 });
+
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+
+      // Initial check
+      const currentSection = Array.from(sections).find(section => {
+        const rect = section.getBoundingClientRect();
+        return rect.top >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight);
+      });
+
+      if (currentSection) {
+        const id = currentSection.getAttribute('id');
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href').includes(id)) {
+            link.classList.add('active');
+          }
+        });
+      }
+    }, 100);
+  });
+
+
+
+
+
+
+
+        
+
+ // function checkAndTriggerReminders() {
+  //  const now = new Date().getTime();
+
+   // for (let i = 0; i < localStorage.length; i++) {
+    //    const key = localStorage.key(i);
+    //    if (key.startsWith('reminder_')) {
+     //       const reminder = JSON.parse(localStorage.getItem(key));
+      //      const reminderTime = new Date(reminder.timestamp);
+
+            // Check if the reminder was addressed
+      //      if (localStorage.getItem(`reminder_addressed_${reminder.timestamp}`) !== 'true') {
+       //         if (reminderTime <= now) {
+       //             showReminderNotification(reminder);
+                    // Remove the reminder after triggering
+        //            localStorage.removeItem(key);
+         //       }
+          //  } else {
+                // Clean up addressed reminders
+           //     localStorage.removeItem(key);
+            //}
+       // }
+   // }
+//}
+
+//let snoozeInterval;
+
+//function showReminderNotification(reminder) {
+ //   var popupNotification = document.getElementById("popupNotification");
+  //  var popupMessage = document.getElementById("popupMessage");
+
+   // popupMessage.innerHTML = `Reminder: It's time to take your Medicine. Medicine: ${reminder.medicine}, Day: ${reminder.day}, <br>Time: ${reminder.time}`;
+   // popupNotification.style.display = "block";
+
+    //var notificationSound = document.getElementById("notificationSound");
+  //  notificationSound.play();
+
+    // Function to hide the notification and stop the sound after 45 seconds
+   // const hideNotification = () => {
+   //     popupNotification.style.display = "none";
+    //    notificationSound.pause();
+     //   notificationSound.currentTime = 0;
+   // };
+
+    // Set a timeout to hide the notification after 45 seconds
+   // const hideNotificationTimeout = setTimeout(() => {
+    //    hideNotification();
+        // Reschedule the notification to appear again after 2 minutes (120000 ms)
+     //   snoozeInterval = setTimeout(() => {
+      //      if (localStorage.getItem(`reminder_addressed_${reminder.timestamp}`) !== 'true') {
+       //         showReminderNotification(reminder);
+        //    }
+      //  }, 120000);
+  //  }, 45000);
+
+    // Update the recordMedicineTaken function to clear the timeouts
+   // window.recordMedicineTaken = function(response) {
+    //    clearTimeout(hideNotificationTimeout);
+     //   clearTimeout(snoozeInterval);
+      //  hideNotification();
+
+    //    if (response === 'yes') {
+     //       alert('You have taken your medicine.');
+      //  } else {
+       //     alert('You have not taken your medicine.');
+    //    }
+
+        // Set the flag indicating the reminder was addressed
+  //      localStorage.setItem(`reminder_addressed_${reminder.timestamp}`, 'true');
+  //  };
+//}
+
+// Periodically check for reminders every minute
+//setInterval(checkAndTriggerReminders);
+//window.addEventListener('load', checkAndTriggerReminders);
+
+//function recordMedicineTaken(response) {
+ //   if (response === 'yes') {
+  //      alert('You have taken your medicine.');
+  //  } else {
+   //     alert('You have not taken your medicine.');
+   // }
+
+    // Close the popup notification
+  //  document.getElementById('popupNotification').style.display = 'none';
+
+    // Stop the sound
+   // var sound = document.getElementById('notificationSound');
+   // sound.pause();
+   // sound.currentTime = 0;
+//}
+
+
+
+
+</script>
+
+</body>
+</html>
